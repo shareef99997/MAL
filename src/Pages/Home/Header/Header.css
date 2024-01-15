@@ -1,0 +1,237 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2; /* Place the header above the slider */
+}
+
+.Home Header {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  transition: ease 0.3s;
+}
+
+/*///////////////// NavBar /////////////*/
+
+.Home Header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1000;
+  border-bottom: var(--gold-main) solid ;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 50px 0 50px;
+  max-height: 100%;
+  transition: ease 0.3s;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+  transition: ease 0.3s;
+  border-radius: 0px;
+  align-items: center;
+}
+
+.language-selectorli  {
+ margin-left: 15px;
+ transition: ease 0.3s;
+}
+.language-selector a {
+  color: white;
+  color: var(--gold-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.3s;
+}
+
+.language-selector li {
+  width: 30px;
+  height: 30px;
+  list-style: none;
+}
+
+.nav-menu li:not(.language-selectorli) {
+  padding-left: 20px;
+  padding-right: 20px;
+  flex: 0 0 auto; 
+  color: var(--second-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: ease 0.3s;
+  border-bottom: transparent solid;
+}
+ 
+.nav-menu li:not(.language-selectorli ):hover {
+   border-bottom: var(--gold-main) solid;
+   transition: ease 0.3s;
+   background-color: rgba(0, 0, 0, 0.045);
+}
+
+.nav-menu li:not(.language-selectorli ):hover a {
+  color: var(--gold-main)!important;
+  transition: ease 0.3s;
+}
+
+.logo{
+  transition: ease-in-out 0.3s;
+  padding: 5px;
+
+}
+
+.logo:hover{
+  transform: scale(1.05);
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*///////////////// body /////////////*/
+
+.image-container {
+  position: relative;
+}
+
+.overlay-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.699); /* Adjust the last value for opacity */
+  pointer-events: none; /* Allow interactions with the image behind */
+  z-index: 1;
+}
+
+.swiper {
+  width: 100%;
+  z-index: 1;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.slider-text {
+  z-index: 2;
+  opacity: 0; /* Initially set opacity to 0 for the fade-in effect */
+  transition: opacity 2.5s ease;
+}
+
+.slider-text.fade-in {
+  opacity: 1; /* Set opacity to 1 to fade in */
+}
+
+.swiper-slide h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hdiv{
+  background-color: #000000;
+  padding: 10px 10px 10px 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 10px;
+  transition: ease 0.3s ;
+}
+
+.hdiv:hover{
+  background-color: #1c1c1c;
+}
+
+.hdiv{
+  background-color: #000000;
+  padding: 10px 10px 10px 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.hdiv span{
+  color: var(--gold-main);
+}
+
+.hdiv a{
+  text-decoration: none;
+  transition: ease 0.3s;
+}
+
+.hdiv h2{
+  font-size: 20px;
+  text-align: center;
+  color: var(--gold-main);
+  transition: ease 0.3s;
+}
+
+.hdiv h2:hover{
+  color: var(--gold-second);
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.autoplay-progress {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--gold-main );
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--gold-second);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+  
+}
