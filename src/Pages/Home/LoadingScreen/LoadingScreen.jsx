@@ -4,17 +4,18 @@ import './LoadingScreen.css'; // Create a CSS file for styling
 const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsVisible(false);
-  //   }, 3000); // Set the duration for the logo display (in milliseconds)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 3000); // Set the duration for the logo display (in milliseconds)
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className={`loading-screen ${isVisible ? '' : 'hidden'}`}>
       <Lines />
+      <Stars />
       <img src={require('../../../Assets/Logos/Main_Logo.png')} alt="Logo" />
       <div className='gold-screen'></div>
       <div className='gold-screend'></div>
