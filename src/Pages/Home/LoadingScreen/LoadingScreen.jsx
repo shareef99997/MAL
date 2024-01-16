@@ -4,23 +4,34 @@ import './LoadingScreen.css'; // Create a CSS file for styling
 const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 4000); // Set the duration for the logo display (in milliseconds)
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsVisible(false);
+  //   }, 3000); // Set the duration for the logo display (in milliseconds)
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div className={`loading-screen ${isVisible ? '' : 'hidden'}`}>
-      <Stars />
+      <Lines />
       <img src={require('../../../Assets/Logos/Main_Logo.png')} alt="Logo" />
       <div className='gold-screen'></div>
+      <div className='gold-screend'></div>
     </div>
   );
 };
 
+export const Lines = () => {
+  return (
+      <div className="lines-container">
+        <div className="line line-top"></div>
+        <div className="line line-right"></div>
+        <div className="line line-left"></div>
+        <div className="line line-bottom"></div>
+      </div>
+  );
+};
 export const Stars = () => {
   // Generate stars dynamically or use a static set
   const stars = Array.from({ length: 50 }, (_, index) => (

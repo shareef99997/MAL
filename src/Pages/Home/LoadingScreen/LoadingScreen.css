@@ -8,26 +8,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
   background-color: white;
   transition: transform 1s ease; 
   z-index: 1000;
 }
 
-.gold-screen{
+.gold-screen {
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   height: 10%;
   width: 100%;
   background-color: var(--gold-main);
 }
 
+.gold-screend {
+  position: absolute;
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+  background-color: var(--gold-second);
+}
+
 .loading-screen.hidden {
   transform: translateY(-100%); /* Slide up to hide */
-  .gold-screen{
+  .gold-screen {
     transition: 1s ease;
     height: 15%;
   }
-
+  .gold-screend {
+    transition: 1s ease;
+    height: 10%;
+  }
 }
 
 .loading-screen img {
@@ -35,6 +47,7 @@
   max-width: 70%;
   max-height: 70%;
 }
+
 @media screen and (max-width: 1024px) {
   .loading-screen img {
     max-width: 90%;
@@ -42,11 +55,26 @@
 }
 
 @media screen and (max-width: 767px) {
-  .loading-screen img {
-    max-width: 90%; /* Adjust the max-width for smaller screens */
+  .loading-screen {
+    height: 150%; /* Adjust height for smaller screens */
   }
-}
 
+  .loading-screen img {
+    max-width: 60%; /* Adjust the max-width for smaller screens */
+  }
+
+  .gold-screen {
+    height: 12%; /* Adjust height for smaller screens */
+  }
+
+  .gold-screend {
+    height: 8%; /* Adjust height for smaller screens */
+  }
+  .lines-container{
+    width: 50%;
+  }
+  
+}
 
 .stars {
   position: fixed;
@@ -63,7 +91,9 @@
   border-radius: 50%;
   opacity: 0;
   animation: glow 3s infinite;
+  transition: ease 30s;
 }
+
 
 @keyframes glow {
   0% {
@@ -74,6 +104,68 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+.lines-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  background-color: var(--gold-second); /* Adjust color as needed */
+  opacity: 1; /* Adjust opacity as needed */
+  
+}
+
+.line-left {
+  left: 20px;
+  width: 10px;
+  height:100% ;
+  animation: lineAnimationY 2s linear;
+}
+
+.line-right {
+  right: 20px;
+  width: 10px;
+  height:100% ;
+  animation: lineAnimationY 2s linear;
+}
+
+.line-bottom {
+  bottom: 160px ;
+  width: 100%;
+  height: 10px;
+  animation: lineAnimationX 2s linear;
+}
+
+.line-top {
+  top: 20px;
+  width: 100%;
+  height: 10px;
+  animation: lineAnimationX 2s linear;
+}
+
+@keyframes lineAnimationY {
+  0% {
+    transform: scaley(0);
+  }
+  100% {
+    transform: scaley(1.0);
+  }
+}
+@keyframes lineAnimationX {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1.0);
   }
 }
 
