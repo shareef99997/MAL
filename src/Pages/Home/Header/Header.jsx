@@ -10,11 +10,12 @@ import 'swiper/css/pagination';
 import { Stars } from '../LoadingScreen/LoadingScreen';
 
 function Header() {
+
+  ////////////////// Slider ////////////////////////////
   const progressCircle = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
   };
-
   const [isSliderTextVisible, setIsSliderTextVisible] = useState(false);
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -63,6 +64,15 @@ function Header() {
       href: '#ProjectsHome',
     },
   ];
+  ////////////////// Slider ////////////////////////////
+
+  ////////////////// navbar ////////////////////////////
+  const [isNavMenuVisible, setIsNavMenuVisible] = useState(false);
+  const handleBurgerClick = () => {
+    setIsNavMenuVisible(!isNavMenuVisible);
+  };
+
+
 
   const [navmenu, setNavmenu] = useState('rgba(0, 0, 0, 0.332)');
   const [navBackground, setNavBackground] = useState('transparent');
@@ -101,16 +111,40 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  ////////////////// navbar ////////////////////////////
   return (
     <div className="Home Header">
       <header>
         <nav style={{ backgroundColor: navBackground , borderBottom: navBorder  }}>
           <div className="nav-content">
+            <div className='langg'>
+              <a href=""><div className='ع'>ع</div></a>
+              <a href=""><div className='E'>E</div></a>
+              
+              
+            </div>
             <div className="logo" style={{width: LogoSize}}>
               <a href="/ar">
                 <img src={navLogo} alt="Main Logo" />
               </a>
+            </div>
+            <div className="burger-menu" onClick={handleBurgerClick}>
+              <div className={`burger-bar ${isNavMenuVisible ? 'cross' : ''}`} style={{}}></div>
+              <div className={`burger-bar ${isNavMenuVisible ? 'cross' : ''}`} style={{}}></div>
+              <div className={`burger-bar ${isNavMenuVisible ? 'cross' : ''}`} style={{}}></div>
+        </div>
+
+        {/* Navigation menu for smaller screens */}
+            <div className={`nav-menu-mobile ${isNavMenuVisible ? 'visible' : ''}`}>
+              <div className="nav-menu-box">
+                <ul>
+                  <li><a href="">الرئيسية</a></li>
+                  <li><a href="">من نحن</a></li>
+                  <li><a href="">خدماتنا</a></li>
+                  <li><a href="">مشاريعنا</a></li>
+                  <li><a href="">تواصل معنا</a></li>
+                </ul>
+              </div>
             </div>
             <ul className="nav-menu" style={{backgroundColor:navmenu}}>
               <li><a style={{color: navtext}} href="">تواصل معنا</a>
@@ -119,19 +153,12 @@ function Header() {
               <li ><a style={{color: navtext}} href="">خدماتنا</a></li>       
               <li ><a style={{color: navtext}} href="">من نحن</a></li>
               <li ><a style={{color: navtext}} href="">الرئيسية</a></li>
-              <li className="language-selectorli" style={{backgroundColor:navlang}} >
-                <ul className="language-selector list">
-									<li className="AGCli active"  >
-                     <a className="AGC active" href="">ع</a>
-                  </li>
-                  <li className="AGCli">
-                    <a className="AGC" style ={{color:'white'}} href="">E</a>
-                  </li>
-								</ul>
-              </li>
             </ul>
           </div>
         </nav>
+
+       
+
 
         <div className="image-container">
           <Swiper

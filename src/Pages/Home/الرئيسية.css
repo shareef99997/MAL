@@ -53,3 +53,12 @@
   color: black;
 }
 
+@media screen and (max-width: 1024px) {
+  .whatsapp-button {
+    height: 60px;
+    right: -240px;
+  }
+  .whatsapp-button img {
+    width: 30px;
+  }
+}
