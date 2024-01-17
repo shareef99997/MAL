@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Header.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay,EffectFade} from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
@@ -10,23 +10,24 @@ import 'swiper/css/pagination';
 import { Stars } from '../LoadingScreen/LoadingScreen';
 
 function Header() {
-
   ////////////////// Slider ////////////////////////////
   const progressCircle = useRef(null);
+
+  // Update progress circle during autoplay
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
   };
-  const [isSliderTextVisible, setIsSliderTextVisible] = useState(false);
 
+  const [isSliderTextVisible, setIsSliderTextVisible] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
+  // Handle slide change
   const handleSlideChange = (swiper) => {
-    // Get the active slide index
     setActiveSlideIndex(swiper.activeIndex);
   };
 
+  // Handle transition end to reset visibility
   const handleTransitionEnd = () => {
-    // After the transition ends, reset visibility for the next fade-in effect
     setIsSliderTextVisible(false);
   };
 
@@ -36,10 +37,10 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    // Add an event listener for the transition end
+    // Add event listener for the transition end
     progressCircle.current.addEventListener('transitionend', handleTransitionEnd);
     return () => {
-      // Remove the event listener when the component is unmounted
+      // Remove event listener when component is unmounted
       progressCircle.current.removeEventListener('transitionend', handleTransitionEnd);
     };
   }, []);
@@ -64,54 +65,61 @@ function Header() {
       href: '#ProjectsHome',
     },
   ];
+
   ////////////////// Slider ////////////////////////////
 
-  ////////////////// navbar ////////////////////////////
+  ////////////////// Navbar ////////////////////////////
   const [isNavMenuVisible, setIsNavMenuVisible] = useState(false);
+
+  // Handle burger menu click
   const handleBurgerClick = () => {
     setIsNavMenuVisible(!isNavMenuVisible);
   };
 
-
-
+  // Navbar styles
   const [navmenu, setNavmenu] = useState('rgba(0, 0, 0, 0.332)');
   const [navBackground, setNavBackground] = useState('transparent');
-  const [navlang, setNavlang] = useState('transparent');
   const [navBorder, setNavBorder] = useState('transparent');
   const [navLogo, setNavLogo] = useState(require('../../../Assets/Logos/Gold_Logo1.png'));
-  const [LogoSize, setLogoSize] = useState('150px');
-  const [navtext, setnavtext] = useState('white');
+  const [logoSize, setLogoSize] = useState('150px');
+  const [navtext, setNavText] = useState('white');
 
   useEffect(() => {
+    // Handle scroll event to change navbar styles
+   
+   
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > window.innerHeight / 4) {
+        // Scrolled down
         setNavBackground('white');
         setNavmenu('transparent');
         setNavBorder('var(--gold-main) solid ');
         setNavLogo(require('../../../Assets/Logos/Main_Logo1.png'));
         setLogoSize('100px');
-        setnavtext('black');
-        setNavlang('black');
-        
+        setNavText('black');
       } else {
+        // Scrolled up
         setNavBackground('transparent');
         setNavmenu('rgba(0, 0, 0, 0.332)');
         setNavBorder('transparent');
         setNavLogo(require('../../../Assets/Logos/Gold_Logo1.png'));
         setLogoSize('150px');
-        setnavtext('white');
-        setNavlang('transparent');
+        setNavText('white');
       }
     };
 
+    // Add event listener for scroll
     window.addEventListener('scroll', handleScroll);
+
+    // Remove event listener when component is unmounted
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  ////////////////// navbar ////////////////////////////
+  ////////////////// Navbar ////////////////////////////
+
   return (
     <div className="Home Header">
       <header>
@@ -123,7 +131,7 @@ function Header() {
               
               
             </div>
-            <div className="logo" style={{width: LogoSize}}>
+            <div className="logo" style={{width: logoSize}}>
               <a href="/ar">
                 <img src={navLogo} alt="Main Logo" />
               </a>

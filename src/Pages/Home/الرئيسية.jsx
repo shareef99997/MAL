@@ -22,7 +22,6 @@ function Home() {
           
         <h3>تواصل معنا</h3>
      </nav></a>   
-      
       <Header />
       <AboutHome />
       <ServisesHome/>
