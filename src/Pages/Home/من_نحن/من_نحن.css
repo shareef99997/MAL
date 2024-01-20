@@ -59,32 +59,7 @@
 .about-us-content p,
 .ab-button {
   transition: opacity 1s ease, transform 1s ease;
-  opacity: 0;
-  transform: translatex(20px);
-}
-
-.about-us-content.active h1{
-  transition-delay: 0.1s;
   opacity: 1;
-  transform: translatex(0);
-}
-
-.about-us-content.active hr{
-  transition-delay: 0.2s;
-  opacity: 1;
-  transform: translatex(0);
-}
-
-.about-us-content.active p{
-  transition-delay: 0.3s;
-  opacity: 1;
-  transform: translatex(0);
-}
-
-.about-us-content.active .ab-button {
-  transition-delay: 0.4s;
-  opacity: 1;
-  transform: translatex(0);
 }
 
 .about-us-content h1{
@@ -172,21 +147,16 @@
   background-image: url('../../../Assets/Slider/Slider1.jpeg'); 
   background-size:cover ;
   background-position: bottom; 
-  right: -100%; /* Move off-screen to the right */
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
-  opacity: 0; /* Initially set opacity to 0 for fade-in effect */
+  opacity: 1;
+  right: 0;
   transition: right 1s ease, opacity 1s ease; /* Add transition for smooth animation */
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.last-text.active {
-  right: 0; /* Move into the screen */
-  opacity: 1; /* Fade in */
 }
 
 .text-client,
@@ -196,31 +166,8 @@
   background-color: #000000dd;
   border-radius: 20px;
   padding: 5px 30px 5px 30px;
-  transform: translateY(30px); /* Move the text down initially */
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for smooth animation */
-}
-
-
-.last-text.active .text-client,
-.last-text.active .text-project,
-.last-text.active .text-building,
-.last-text.active .text-meter {
-  transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.3s; /* Adjust delay for staggered appearance */
-}
-
-.last-text.active .text-project {
-  transition-delay: 0.5s; /* Additional delay for .project */
-}
-
-.last-text.active .text-building {
-  transition-delay: 0.8s; /* Additional delay for .building */
-}
-
-.last-text.active .text-meter {
-  transition-delay: 1s; /* Additional delay for .meter */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for smooth animation */
 }
 
 .last-text h3 {

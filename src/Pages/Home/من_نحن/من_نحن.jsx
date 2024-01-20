@@ -20,7 +20,6 @@ function AboutHome() {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
   };
 
-  const [isSliderTextVisible, setIsSliderTextVisible] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   // Handle slide change
@@ -30,12 +29,11 @@ function AboutHome() {
 
   // Handle transition end to reset visibility
   const handleTransitionEnd = () => {
-    setIsSliderTextVisible(false);
   };
 
   useEffect(() => {
     // Set initial visibility for the first slide
-    setIsSliderTextVisible(true);
+    startCountingAnimations();
   }, []);
 
   useEffect(() => {
@@ -59,38 +57,12 @@ function AboutHome() {
   ];
 
   ////////////////// Slider ////////////////////////////
-  
-  const [isVisible, setIsVisible] = useState(false);
+
   const lastTextRef = useRef(null);
   const [countClient, setCountClient] = useState(0);
   const [countProject, setCountProject] = useState(0);
   const [countBuilding, setCountBuilding] = useState(0);
   const [countMeter, setCountMeter] = useState(0);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Adjust the threshold as needed
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add the 'active' class when the about-us section is in view
-          lastTextRef.current.classList.add('active');
-          setIsVisible(true);
-          startCountingAnimations();
-        }
-      });
-    }, options);
-
-    // Observe the about-us section
-    observer.observe(document.getElementById('AboutHome'));
-
-    // Clean up the observer when the component is unmounted
-    return () => observer.disconnect();
-  }, []);
 
 
 
@@ -185,7 +157,7 @@ function AboutHome() {
         </div>
           </div>
 
-          <div className={`about-us-content ${isVisible ? 'active' : ''}` }>
+          <div className={`about-us-content` }>
             <div>
               <h1>منظومة تطويرية متكاملة </h1>
               <hr />
