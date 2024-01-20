@@ -32,11 +32,6 @@ function AboutHome() {
   };
 
   useEffect(() => {
-    // Set initial visibility for the first slide
-    startCountingAnimations();
-  }, []);
-
-  useEffect(() => {
     // Add event listener for the transition end
     progressCircle.current.addEventListener('transitionend', handleTransitionEnd);
     return () => {
@@ -58,62 +53,30 @@ function AboutHome() {
 
   ////////////////// Slider ////////////////////////////
 
-  const lastTextRef = useRef(null);
-  const [countClient, setCountClient] = useState(0);
-  const [countProject, setCountProject] = useState(0);
-  const [countBuilding, setCountBuilding] = useState(0);
-  const [countMeter, setCountMeter] = useState(0);
-
-
-
-  const startCountingAnimations = () => {
-    const duration = 2000; // Duration of the counting animation in milliseconds
-
-    const increment = (targetValue, setCountFunction) => {
-      const step = Math.ceil(targetValue / (duration / 16)); // 16ms is roughly equivalent to 1 frame in 60fps
-
-      const interval = setInterval(() => {
-        setCountFunction((prev) => {
-          const nextValue = prev + step;
-          if (nextValue >= targetValue) {
-            clearInterval(interval);
-            return targetValue;
-          }
-          return nextValue;
-        });
-      }, 16);
-    };
-
-    increment(500, setCountClient);
-    increment(5, setCountProject);
-    increment(225, setCountBuilding);
-    increment(500000, setCountMeter);
-  };
-
 
   return (
     <div className="AboutHome" id='AboutHome'> 
 
       <section className={'about-us'}>
         <section className='numbers'>
-            <div ref={lastTextRef} className='last-text'>
+            <div className='last-text'>
               <div className='text-client'>
-                <h3>{countClient}+</h3>
+                <h3>500+</h3>
                 <h5> عميل </h5>
               </div>
 
               <div className='text-project'>
-                <h3>{countProject}+</h3>
+                <h3>5+</h3>
                 <h5> مشروع سكني</h5>
               </div>
 
               <div className='text-building'>
-                <h3>{countBuilding}+</h3>
+                <h3>225+</h3>
                 <h5> بناية</h5>
               </div>
 
               <div className='text-meter'>
-                <h3>{countMeter}+</h3>
+                <h3>500000+</h3>
                 <h5> متر مربع </h5>
               </div>
             </div>
