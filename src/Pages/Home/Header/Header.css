@@ -4,6 +4,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 2; /* Place the header above the slider */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .Home Header {
@@ -164,13 +165,17 @@ header {
   opacity: 1; /* Set opacity to 1 to fade in */
 }
 
+.slider-text-h1-div{
+  background-color: #000000;
+}
+
 .swiper-slide h1 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  font-size: 56px;
   z-index: 2;
 }
 
@@ -190,17 +195,6 @@ header {
   background-color: #1c1c1c;
 }
 
-.hdiv{
-  background-color: #000000;
-  padding: 10px 10px 10px 10px;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  border-radius: 10px;
-}
-
 .hdiv span{
   color: var(--gold-main);
 }
@@ -213,7 +207,7 @@ header {
 .hdiv h2{
   font-size: 20px;
   text-align: center;
-  color: var(--gold-main);
+  color: white;
   transition: ease 0.3s;
 }
 
@@ -515,9 +509,21 @@ header {
     width: auto; 
   }
 
+  .swiper-slide h1 {
+    font-size: 36px;
+    
+  }
   
+  .hdiv{
+    
+    top: 80%;
+    left: 52%;
+  }
 }
 
 @media screen and (max-width: 767px) {
 
+  .logo img{
+    margin-right: 16px;
+  }
 }

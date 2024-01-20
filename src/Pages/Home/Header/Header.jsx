@@ -8,6 +8,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Stars } from '../LoadingScreen/LoadingScreen';
+import Contact from '../../Contact/Contact';
 
 function Header() {
   ////////////////// Slider ////////////////////////////
@@ -155,8 +156,7 @@ function Header() {
               </div>
             </div>
             <ul className="nav-menu" style={{backgroundColor:navmenu}}>
-              <li><a style={{color: navtext}} href="">تواصل معنا</a>
-              </li>
+              <li><a style={{color: navtext}} href=''>تواصل معنا</a></li>
               <li ><a style={{color: navtext}} href="">مشاريعنا</a></li>  
               <li ><a style={{color: navtext}} href="">خدماتنا</a></li>       
               <li ><a style={{color: navtext}} href="">من نحن</a></li>
@@ -182,26 +182,22 @@ function Header() {
           modules={[Autoplay,EffectFade]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           onSlideChange={handleSlideChange}
-          onTransitionEnd={handleTransitionEnd}
-        >
+          onTransitionEnd={handleTransitionEnd}>
           {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <Stars />
             <img src={slide.image} alt={`slider${index + 1}`} loading="lazy" />
             <div className={`slider-text ${activeSlideIndex === index ? 'fade-in' : ''}`}>
-              <h1>{slide.title}</h1>
-              <a href={slide.href}><div className='hdiv'>
-                
+              <div className='slider-text-h1-div'><h1>{slide.title}</h1></div>
+              <a href={slide.href}><div className='hdiv'>  
                   <h2>{slide.subtitles}&nbsp;  <span>&#62;</span></h2>
-                
-                
               </div></a>
               <div className="overlay-div"></div>
             </div>
           </SwiperSlide>
         ))}
           <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 68 68" ref={progressCircle}>
+          <svg viewBox="0 0 78 78" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
           </svg>
         </div>

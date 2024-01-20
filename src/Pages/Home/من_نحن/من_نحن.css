@@ -1,4 +1,553 @@
-.AboutHome{
+/*//////////////// about us ////////////////*/
+
+.AboutHome section{
+  padding: 3% 3% 3% 3%;
+  
+}
+
+.about-us{
   width: 100%;
-  height: 100vh;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-img-text{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.main-img img{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.main-img {
+  background: var(--main-gradient);
+  max-width: 100%;
+  width: 720px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  position: relative;
+}
+
+.main-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: white;
+}
+
+.main-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: white;
+}
+
+
+/* Adjust the transition delay for each element inside about-us-content */
+.about-us-content h1,
+.about-us-content hr,
+.about-us-content p,
+.ab-button {
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
+  transform: translatex(20px);
+}
+
+.about-us-content.active h1{
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translatex(0);
+}
+
+.about-us-content.active hr{
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translatex(0);
+}
+
+.about-us-content.active p{
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translatex(0);
+}
+
+.about-us-content.active .ab-button {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translatex(0);
+}
+
+.about-us-content h1{
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: end;
+}
+
+.about-us-content hr{
+  width: 30%;
+  border: none;
+  height: 1px;
+  background: var(--main-gradient);
+  margin-bottom: 40px;
+  margin-left: auto;
+}
+
+.about-us-content p{
+  color: black;
+  text-align: end;
+  font-size: 19px;
+  line-height: 44px;
+}
+
+.about-us-content div{
+  order: 1;
+}
+
+.about-us .blank{
+  height: 100px;
+}
+
+.ab-button {
+  margin-top: 100px;
+  background-color: #000000;
+  color: white;
+  order: 2;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: ease 0.3s;
+}
+
+.ab-button :hover{
+  background-color: #1c1c1c;
+}
+
+.ab-button h2{
+  font-size: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 10px 10px 10px 10px;
+  transition: ease 0.3s;
+}
+
+.ab-button h2:hover{
+  color: var(--gold-second);
+}
+
+.ab-button span{
+  color: var(--gold-main);
+}
+
+/* Slider */
+.slider-text-h1-div h1{
+  font-size: 28px;
+}
+
+/*//////////////// about us ////////////////*/
+
+/*//////////////// numbers ////////////////*/
+
+.numbers{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 6%;
+  
+}
+
+.last-text {
+  position: absolute;
+  width: 100%;
+  background-image: url('../../../Assets/Slider/Slider1.jpeg'); 
+  background-size:cover ;
+  background-position: bottom; 
+  right: -100%; /* Move off-screen to the right */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  opacity: 0; /* Initially set opacity to 0 for fade-in effect */
+  transition: right 1s ease, opacity 1s ease; /* Add transition for smooth animation */
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.last-text.active {
+  right: 0; /* Move into the screen */
+  opacity: 1; /* Fade in */
+}
+
+.text-client,
+.text-project,
+.text-building,
+.text-meter {
+  background-color: #000000dd;
+  border-radius: 20px;
+  padding: 5px 30px 5px 30px;
+  transform: translateY(30px); /* Move the text down initially */
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for smooth animation */
+}
+
+
+.last-text.active .text-client,
+.last-text.active .text-project,
+.last-text.active .text-building,
+.last-text.active .text-meter {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.3s; /* Adjust delay for staggered appearance */
+}
+
+.last-text.active .text-project {
+  transition-delay: 0.5s; /* Additional delay for .project */
+}
+
+.last-text.active .text-building {
+  transition-delay: 0.8s; /* Additional delay for .building */
+}
+
+.last-text.active .text-meter {
+  transition-delay: 1s; /* Additional delay for .meter */
+}
+
+.last-text h3 {
+  background: var(--main-gradient);
+  color: transparent; 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.last-text h5{
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  text-align: center;
+
+}
+
+/*//////////////// numbers ////////////////*/
+
+/*//////////////// goals ////////////////*/
+
+.goals-section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  width: 100%;
+  position: absolute;
+}
+
+.goal {
+  flex: 1;
+  height: 200px;
+  background-size:cover ;
+  background-position: center; 
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.goal:hover {
+  height: 201px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.673);
+  padding: 20px;
+  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.677)
+}
+
+.goal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.763); /* Adjust the overlay color and transparency */
+  z-index: 1; /* Place the overlay behind the content */
+}
+
+.vision {
+  background-image: url('../../../Assets/Slider/Slider1.jpeg'); 
+}
+
+.message {
+  background-image: url('../../../Assets/Slider/Slider2.jpeg'); 
+}
+
+.value {
+  background-image: url('../../../Assets/Slider/Slider3.jpeg'); 
+}
+
+.gh2{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.gh2 img{
+  width: 45px;
+  height: 40px;
+  z-index: 2;
+  
+}
+
+.goal h2,
+.goal p {
+  z-index: 2;
+  position: relative;
+  margin: 10px;
+  color: #fff; 
+  text-align: end;
+}
+
+.goal h2{
+  z-index: 2;
+  position: relative;
+  margin: 10px;
+  background: var(--main-gradient);
+  color: transparent; 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  text-align: end;
+  font-size:25px ;
+}
+
+/*//////////////// goals ////////////////*/
+
+/*//////////////// company ////////////////*/
+.company{
+  padding: 3% 3% 3% 3%;
+}
+
+.company-items h1{
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  transition: opacity 1s ease, transform 1s ease;
+  position: relative; 
+  z-index: 1; 
+  transform: translatex(20px);
+  padding-right: 20px;
+}
+
+.Partners {
+  padding: 1% 5% 2% 5%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  gap: 16px;
+  text-align: center;
+}
+
+.Partners img {
+  width: 100px;
+  height: auto;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.5;
+  transition: 1s ease;
+}
+
+.Partners img:hover{
+  transition: 1s ease;
+  opacity: 1;
+}
+/*//////////////// company ////////////////*/
+
+
+@media screen and (max-width: 1577px) {
+.main-img{
+  width: 550px;
+}
+
+.Partners img{
+  width: 70px;
+}
+}
+
+@media screen and (max-width: 1220px) {
+
+  .main-img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Partners img{
+    width: 60px;
+  }
+
+  .Partners{
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+  }
+
+  .last-text h3{
+    font-size: 30px;
+  } 
+
+  .last-text h5{
+    font-size: 12px;
+  }
+
+  .about-img-text{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+@media screen and (max-width: 727px) {
+  .main-img{
+    margin-left: auto;
+    margin-right: auto;
+    width:350px ;
+  }
+
+  .Partners{
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+
+  .Partners img{
+    width: 50px;
+    opacity: 1;
+  }
+
+  .last-text h3{
+    font-size: 20px;
+  } 
+
+  .last-text h5{
+    font-size: 10px;
+  }
+
+  .about-img-text{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .main-img{
+    margin-left: auto;
+    margin-right: auto;
+    width:350px ;
+    order: 2;
+  }
+  .about-us-content{
+    order: 1;
+  }
+
+  .company-items h1{
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Partners{
+    padding-top: 30px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+
+  .Partners img{
+    width: 50px;
+    opacity: 1;
+  }
+
+  .text-client,
+  .text-project,
+  .text-building,
+  .text-meter {
+    padding: 5px 15px 5px 15px;
+  }
+
+  .last-text h3{
+    font-size: 18px;
+  } 
+
+  .last-text h5{
+    font-size: 9px;
+  }
+
+  .about-img-text{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about-us-content h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about-us-content hr{
+    width: 60%;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-us-content p{
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .ab-button h2{
+    font-size: 15px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
+    transition: ease 0.3s;
+  }
+
+  .ab-button {
+    margin-top: 50px;
+    width:90px;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .main-img{
+    margin-left: auto;
+    margin-right: auto;
+    width:280px ;
+    order: 2;
+  }
+}
+@media screen and (max-width: 325px) {
+  .main-img{
+    margin-left: auto;
+    margin-right: auto;
+    width:250px ;
+    order: 2;
+  }
 }

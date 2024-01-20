@@ -1,11 +1,9 @@
-import './Home.css';
-
-function Home() {
+function Contact() {
   return (
-    <div className="Home">
-
+    <div className="Contact" id='Contact'>
+      <h1>Contact</h1>
     </div>
   );
 }
 
-export default Home;
+export default Contact;
