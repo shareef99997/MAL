@@ -1,24 +1,35 @@
 {
   "files": {
-    "main.css": "/syad/static/css/main.bea6deb4.css",
-    "main.js": "/syad/static/js/main.2e6ccb86.js",
+    "main.css": "/syad/static/css/main.e1360947.css",
+    "main.js": "/syad/static/js/main.3b3993ab.js",
     "static/media/Slider1.jpeg": "/syad/static/media/Slider1.0fbade1b1e0686a3cf0a.jpeg",
     "static/media/Slider2.jpeg": "/syad/static/media/Slider2.a452de80763514775a20.jpeg",
     "static/media/Slider3.jpeg": "/syad/static/media/Slider3.089c037144070cb63cb7.jpeg",
     "static/media/Gold_Logo1.png": "/syad/static/media/Gold_Logo1.18148137419d0965d605.png",
+    "static/media/وزارة-الطاقة.png": "/syad/static/media/وزارة-الطاقة.2f5df0e1c42e3a32a954.png",
+    "static/media/Slider5.jpg": "/syad/static/media/Slider5.cf4f0206b1e3c7db62a5.jpg",
     "static/media/Muslimah Thin.otf": "/syad/static/media/Muslimah Thin.7b096d46cafed4665bd2.otf",
+    "static/media/Slider4.jpg": "/syad/static/media/Slider4.2d509ac3ccd7c8cef438.jpg",
+    "static/media/الفنار.png": "/syad/static/media/الفنار.6408ab2376057bd08532.png",
+    "static/media/سابك.png": "/syad/static/media/سابك.e6921aac16e4892f0e95.png",
     "static/media/Main_Logo1.png": "/syad/static/media/Main_Logo1.33f9e38505068fd5386f.png",
     "static/media/Main_Logo.png": "/syad/static/media/Main_Logo.00b4e9c3b5379d4f8c77.png",
+    "static/media/grohe.png": "/syad/static/media/grohe.4799033fccfa795f404b.png",
+    "static/media/شركة-أبوظبي-التجاري-للخدمات-الهندسية.png": "/syad/static/media/شركة-أبوظبي-التجاري-للخدمات-الهندسية.a9d679f3b622308bcc16.png",
+    "static/media/النابودة.jpg": "/syad/static/media/النابودة.fda7e8bf4bff83f00b96.jpg",
+    "static/media/ملاك.png": "/syad/static/media/ملاك.c834a93594360ca62cef.png",
+    "static/media/ivuc99yw.png": "/syad/static/media/ivuc99yw.1e5b8ee02f455176b00d.png",
+    "static/media/جوتان.png": "/syad/static/media/جوتان.5f66a5a76f99f4b0e532.png",
     "static/media/slick.svg": "/syad/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/syad/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/syad/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/syad/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/syad/index.html",
-    "main.bea6deb4.css.map": "/syad/static/css/main.bea6deb4.css.map",
-    "main.2e6ccb86.js.map": "/syad/static/js/main.2e6ccb86.js.map"
+    "main.e1360947.css.map": "/syad/static/css/main.e1360947.css.map",
+    "main.3b3993ab.js.map": "/syad/static/js/main.3b3993ab.js.map"
   },
   "entrypoints": [
-    "static/css/main.bea6deb4.css",
-    "static/js/main.2e6ccb86.js"
+    "static/css/main.e1360947.css",
+    "static/js/main.3b3993ab.js"
   ]
 }
