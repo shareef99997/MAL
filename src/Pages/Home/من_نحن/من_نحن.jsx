@@ -43,11 +43,11 @@ function AboutHome() {
   const slides = [
     {
       image: require('../../../Assets/Slider/Slider4.jpg'),
-      title: 'شركة سياد للأستثمار',
+      title: 'شركة مال للأستثمار',
     },
     {
       image: require('../../../Assets/Slider/Slider5.jpg'),
-      title: 'شركة سياد للأستثمار',
+      title: 'شركة مال للأستثمار',
     },
   ];
 
@@ -58,7 +58,7 @@ function AboutHome() {
     <div className="AboutHome" id='AboutHome'> 
 
       <section className={'about-us'}>
-        <section className='numbers'>
+        {/* <section className='numbers'>
             <div className='last-text'>
               <div className='text-client'>
                 <h3>500+</h3>
@@ -81,7 +81,7 @@ function AboutHome() {
               </div>
             </div>
             <div className='blank'></div>
-        </section>
+        </section> */}
 
         <div className='about-img-text'>
           
@@ -122,10 +122,10 @@ function AboutHome() {
 
           <div className={`about-us-content` }>
             <div>
-              <h1>منظومة تطويرية متكاملة </h1>
+              <h1>منظومة إستثمارية متكاملة </h1>
               <hr />
               <p > 
-                شركة سياد للاستثمار منظومة تطويرية متكاملة بدءاً من دراسة الفرص مرورا
+                شركة مال للاستثمار منظومة إستثمارية متكاملة بدءاً من دراسة المشاريع مرورا
                 بالتخطيط و الهندسة و التنفيذ بإدارة مهنية احترافية وصولا إلى تسليم مشاريع
                 ذات جودة عاليه متوافقه مع رؤية المملكة العربية السعودية ٢٠٣٠
               </p>
@@ -159,7 +159,7 @@ function AboutHome() {
                       <img src={require('../../../Assets/Icons/message.png')} alt="" />
                     <h2> رسالتنا </h2>
                   </div>
-                  <p>اتخذت شركة سياد من اسمها رسالة
+                  <p>اتخذت شركة مال من اسمها رسالة
                   و من نشاطها تفرداً و من تجربتها تميزا
                   .تطور بابتكار ,تنفذ بولاء, تستثمر بجدوى</p>
                 </div>

@@ -1,0 +1,86 @@
+.Services {
+  background-image: url('../../../Assets/Illistrations/night_dark.jpg');
+  background-size: cover;
+  background-attachment: fixed; /* This will make the background fixed */
+  height: 100vh; /* Set height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
+.line- {
+  height: 3px;
+  background: linear-gradient(to right, transparent 25%, var(--gold-second) 50%, transparent 75%);
+  margin: 10px auto; /* Adjust margin as needed */
+  width: 80%; /* Adjust width as needed */
+}
+
+.service {
+  background-color: rgb(251, 251, 251); /* Adjust background color and opacity */
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+ border: var(--gold-second) solid;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--gold-second);
+  width: 500px; 
+  transition: 1s ease;
+
+}
+
+.service:hover {
+  
+  transform: scale(1.05);
+}
+
+
+p{
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.623);
+  font-size: 15px;
+}
+
+/* Media query for tablets */
+@media only screen and (max-width: 1220px) {
+  .service {
+    width: 350px;
+  }
+}
+
+/* Media query for tablets */
+@media only screen and (max-width: 878px) {
+  .services-container {
+    grid-template-columns: 1fr; /* Set to single column */
+    padding: 0 20px; /* Adjust padding for responsiveness */
+    .service {
+      height: 150px;
+      font-size: 20px;
+    }
+    p{
+      font-size: 10px;
+    }
+  }
+}
+
+/* Media query for phones */
+@media only screen and (max-width: 580px) {
+  .services-container {
+    padding: 0 10px; /* Adjust padding for responsiveness */
+  }
+  .service {
+    height: 70px;
+    width: 350px;
+    font-size: 18px;
+  }
+  
+
+}

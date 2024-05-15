@@ -49,7 +49,7 @@ function Header() {
   const slides = [
     {
       image: require('../../../Assets/Slider/Slider1.jpeg'),
-      title: 'شركة سياد للأستثمار',
+      title: 'شركة مال للأستثمار',
       subtitles: 'تعرف على المزيد',
       href: '#AboutHome',
     },
@@ -81,7 +81,7 @@ function Header() {
   const [navmenu, setNavmenu] = useState('rgba(0, 0, 0, 0.332)');
   const [navBackground, setNavBackground] = useState('transparent');
   const [navBorder, setNavBorder] = useState('transparent');
-  const [navLogo, setNavLogo] = useState(require('../../../Assets/Logos/Gold_Logo1.png'));
+  const [navLogo, setNavLogo] = useState(require('../../../Assets/Logos/Gold_Logo.png'));
   const [logoSize, setLogoSize] = useState('150px');
   const [navtext, setNavText] = useState('white');
 
@@ -97,7 +97,7 @@ function Header() {
         setNavBackground('white');
         setNavmenu('transparent');
         setNavBorder('var(--gold-main) solid ');
-        setNavLogo(require('../../../Assets/Logos/Main_Logo1.png'));
+        setNavLogo(require('../../../Assets/Logos/Main_Logo.png'));
         setLogoSize('100px');
         setNavText('black');
       } else {
@@ -105,7 +105,7 @@ function Header() {
         setNavBackground('transparent');
         setNavmenu('rgba(0, 0, 0, 0.332)');
         setNavBorder('transparent');
-        setNavLogo(require('../../../Assets/Logos/Gold_Logo1.png'));
+        setNavLogo(require('../../../Assets/Logos/Gold_Logo.png'));
         setLogoSize('150px');
         setNavText('white');
       }

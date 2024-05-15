@@ -8,7 +8,7 @@
 .about-us{
   width: 100%;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
 }
 
 .about-img-text{
@@ -281,6 +281,7 @@
 /*//////////////// company ////////////////*/
 .company{
   padding: 3% 3% 3% 3%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .company-items h1{
@@ -296,7 +297,7 @@
 }
 
 .Partners {
-  padding: 1% 5% 2% 5%;
+  padding: 5% 5% 2% 5%;
   display: grid;
   grid-template-columns: repeat(6, minmax(150px, 1fr));
   gap: 16px;
@@ -309,7 +310,7 @@
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0.5;
+  
   transition: 1s ease;
 }
 
